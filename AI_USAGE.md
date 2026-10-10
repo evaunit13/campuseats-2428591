@@ -10,7 +10,7 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - One thing the AI got wrong and how I fixed it: Nothing wrong.
 
 ## Week 2
-- Tool(s):
-- What I asked for:
-- What I kept, changed or rejected, and why:
-- One thing the AI got wrong and how I fixed it:
+- Tool(s): None
+- What I asked for: None
+- What I kept, changed or rejected, and why: None
+- One thing the AI got wrong and how I fixed it: None
