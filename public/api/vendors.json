@@ -1,0 +1,137 @@
+[
+  {
+    "id": "2428591-kafe-mahallah-iman",
+    "name": "Kafe Mahallah IMAN",
+    "location": "Mahallah IMAN, Block IMAN",
+    "openHours": "7:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2428591-m1",
+        "name": "Nasi Lemak Ayam",
+        "description": "Coconut rice, spiced fried chicken, sambal, egg, and peanuts",
+        "price": 7.5,
+        "category": "Rice",
+        "popular": true,
+        "available": true
+      },
+      {
+        "id": "2428591-m2",
+        "name": "Nasi Goreng Kampung",
+        "description": "Traditional village-style fried rice with water spinach and anchovies",
+        "price": 6.5,
+        "category": "Rice",
+        "popular": false,
+        "available": true
+      },
+      {
+        "id": "2428591-m3",
+        "name": "Mee Goreng Mamak",
+        "description": "Stir-fried noodles with tofu, egg, bean sprouts, and chili",
+        "price": 6.0,
+        "category": "Noodles",
+        "popular": true,
+        "available": true
+      },
+      {
+        "id": "2428591-m4",
+        "name": "Kuey Teow Goreng",
+        "description": "Wok-fried flat rice noodles with egg, greens, and savory soy sauce",
+        "price": 6.0,
+        "category": "Noodles",
+        "popular": false,
+        "available": true
+      },
+      {
+        "id": "2428591-m5",
+        "name": "Bihun Sup Ayam",
+        "description": "Rice vermicelli in aromatic chicken broth with chicken slices and spring onions",
+        "price": 6.5,
+        "category": "Noodles",
+        "popular": false,
+        "available": true
+      },
+      {
+        "id": "2428591-m6",
+        "name": "Teh Tarik",
+        "description": "Frothy pulled milk tea",
+        "price": 2.5,
+        "category": "Drinks",
+        "popular": true,
+        "available": true
+      },
+      {
+        "id": "2428591-m7",
+        "name": "Milo Ais",
+        "description": "Chilled chocolate malt beverage",
+        "price": 3.0,
+        "category": "Drinks",
+        "popular": true,
+        "available": true
+      },
+      {
+        "id": "2428591-m8",
+        "name": "Karipap Ayam (3 pcs)",
+        "description": "Crispy pastry pockets filled with spiced potato and minced chicken",
+        "price": 3.0,
+        "category": "Snacks",
+        "popular": false,
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": "2415666-kafe-aminah",
+    "name": "Kafe Mahallah Aminah",
+    "location": "Mahallah Aminah, Ground Floor",
+    "openHours": "8:00 am - 9:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2415666-m1",
+        "name": "Nasi Ayam Penyet",
+        "description": "Smashed fried chicken with sambal and rice",
+        "price": 9.0,
+        "category": "Rice",
+        "popular": true,
+        "available": true
+      },
+      {
+        "id": "2415666-m2",
+        "name": "Air Bandung",
+        "description": "Rose syrup with milk",
+        "price": 3.0,
+        "category": "Drinks",
+        "popular": true,
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": "2410233-kopi-dahlia",
+    "name": "Kopi Dahlia",
+    "location": "Mahallah Asma, Block C",
+    "openHours": "8:00 am - 11:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2410233-m1",
+        "name": "Kopi Ais Kaw",
+        "description": "Strong local iced coffee with sweetened condensed milk",
+        "price": 3.5,
+        "category": "Drinks",
+        "popular": true,
+        "available": true
+      },
+      {
+        "id": "2410233-m2",
+        "name": "Roti Bakar Kaya Butter",
+        "description": "Toasted bread with coconut egg jam and cold butter slice",
+        "price": 3.0,
+        "category": "Snacks",
+        "popular": false,
+        "available": true
+      }
+    ]
+  }
+]
