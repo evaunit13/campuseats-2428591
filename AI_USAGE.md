@@ -20,3 +20,9 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - What I asked for: Fix indentations, create vendors.json, and help with personal feature
 - What I kept, changed or rejected, and why: I only have it fix the indentations when I copy and paste the codes in from W03_Lab_Sheet.pdf, format the vendors.json file, and write the category filter for my personal feature
 - One thing the AI got wrong and how I fixed it: Nothing wrong.
+
+## Week 4
+- Tool(s): Copilot
+- What I asked for: Help with useLocalStorage and syncing category filter to URL params
+- What I kept, changed or rejected, and why: Used its code for localStorage saving and useSearchParams for the category buttons.
+- One thing the AI got wrong and how I fixed it: It imported from react-router-dom which broke, so I changed it to react-router.

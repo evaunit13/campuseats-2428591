@@ -1,0 +1,69 @@
+import { CartContext } from './cart-context.js'
+import { useLocalStorage } from '../hooks/useLocalStorage.js'
+
+export function CartProvider({ children }) {
+  const [cart, setCart] = useLocalStorage('campuseats-cart', [])
+  const [orders, setOrders] = useLocalStorage('campuseats-orders', [])
+
+  function addToCart(item) {
+    setCart((prevCart) => {
+      const existing = prevCart.find((line) => line.item.id === item.id)
+      if (existing) {
+        return prevCart.map((line) =>
+          line.item.id === item.id ? { ...line, qty: line.qty + 1 } : line
+        )
+      }
+      return [...prevCart, { item, qty: 1 }]
+    })
+  }
+
+  function changeQty(itemId, delta) {
+    setCart((prevCart) =>
+      prevCart
+        .map((line) =>
+          line.item.id === itemId ? { ...line, qty: line.qty + delta } : line
+        )
+        .filter((line) => line.qty > 0)
+    )
+  }
+
+  function removeFromCart(itemId) {
+    setCart((prevCart) => prevCart.filter((line) => line.item.id !== itemId))
+  }
+
+  function placeOrder(details) {
+    const orderTotal = cart.reduce(
+      (sum, line) => sum + line.item.price * line.qty,
+      0
+    )
+    const newOrder = {
+      ...details,
+      id: Date.now().toString(),
+      items: cart,
+      total: orderTotal,
+      createdAt: new Date().toISOString(),
+    }
+    setOrders((prevOrders) => [newOrder, ...prevOrders])
+    setCart([])
+    return newOrder
+  }
+
+  const count = cart.reduce((sum, line) => sum + line.qty, 0)
+  const total = cart.reduce(
+    (sum, line) => sum + line.item.price * line.qty,
+    0
+  )
+
+  const value = {
+    cart,
+    orders,
+    count,
+    total,
+    addToCart,
+    changeQty,
+    removeFromCart,
+    placeOrder,
+  }
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>
+}
