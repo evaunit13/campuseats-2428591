@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useSearchParams } from 'react-router'
 import MenuItemCard from './MenuItemCard.jsx'
+import { useCart } from '../hooks/useCart.js'
 
-function MenuList({ items, onAdd }) {
-  const [selectedCategory, setSelectedCategory] = useState('All')
+function MenuList({ items }) {
+  const { addToCart } = useCart()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const catParam = searchParams.get('cat') || 'All'
 
   if (items.length === 0) {
     return <p className="muted">No items on this menu yet.</p>
@@ -10,15 +13,22 @@ function MenuList({ items, onAdd }) {
 
   // Derive unique categories from items
   const categories = ['All', ...new Set(items.map((item) => item.category))]
-  const activeCategory = categories.includes(selectedCategory)
-    ? selectedCategory
-    : 'All'
+  const activeCategory = categories.includes(catParam) ? catParam : 'All'
 
   // Filter visible items
   const visibleItems =
     activeCategory === 'All'
       ? items
       : items.filter((item) => item.category === activeCategory)
+
+  function handleCategoryClick(cat) {
+    if (cat === 'All') {
+      searchParams.delete('cat')
+      setSearchParams(searchParams)
+    } else {
+      setSearchParams({ cat })
+    }
+  }
 
   return (
     <div>
@@ -28,7 +38,7 @@ function MenuList({ items, onAdd }) {
             key={cat}
             type="button"
             className={`category-btn ${activeCategory === cat ? 'active' : ''}`}
-            onClick={() => setSelectedCategory(cat)}
+            onClick={() => handleCategoryClick(cat)}
           >
             {cat}
           </button>
@@ -39,7 +49,7 @@ function MenuList({ items, onAdd }) {
       ) : (
         <div className="grid">
           {visibleItems.map((item) => (
-            <MenuItemCard key={item.id} item={item} onAdd={onAdd} />
+            <MenuItemCard key={item.id} item={item} onAdd={addToCart} />
           ))}
         </div>
       )}
